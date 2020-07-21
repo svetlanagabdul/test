@@ -1,0 +1,13 @@
+<h1>Account Login</h1>
+<div class="card-container">
+<form class="card" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+	<div class="field">
+		<input class="text" formControlName="login" type="text" placeholder="login" required>
+		<div class="required-message">The field is required.</div>
+	</div>
+	<div class="field">
+		<input class="text" formControlName="password" type="password" placeholder="password" required>
+		<div class="required-message">The field is required.</div>
+	</div>
+	<button type="submit">Log in</button>
+</form>

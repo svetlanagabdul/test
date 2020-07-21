@@ -1,0 +1,60 @@
+
+<div class="success-message" *ngIf="docApproved">
+	<h1>{{ docApproved }}</h1>
+</div>
+<ng-container *ngIf="!docApproved">
+<div *ngFor="let item of docText$ | async">
+	<h1>{{ item.name }}</h1>
+	<p *ngFor="let p of item.desc">{{ p }}</p>
+</div>
+<form class="doc-form" [formGroup]="documentForm" (ngSubmit)="onSubmit()">
+	<div class="required-message field">Resolution is required</div>
+	<div class="field">
+		<input
+			formControlName="resolution"
+			type="radio"
+			id="fully-agree"
+			name="resolution"
+			value="fullyApproved"
+			required
+		>
+		<label for="fully-agree">Полностью согласен</label>
+	</div>
+	<div class="field">
+		<input
+			formControlName="resolution"
+			type="radio"
+			id="agree"
+			name="resolution"
+			value="approved"
+			required
+		>
+		<label for="agree">Согласен</label>
+	</div>
+	<div class="field">
+		<input
+			formControlName="resolution"
+			type="radio"
+			id="disagree"
+			name="resolution"
+			value="notApproved"
+			required
+		>
+		<label for="disagree">Не согласен</label>
+	</div>
+	<div class="field">
+		<input
+			formControlName="resolution"
+			type="radio"
+			id="agreeChangeColor"
+			name="resolution"
+			value="approvedChangeColor"
+			required
+		>
+		<label for="agreeChangeColor">Разрешаю красить в синий цвет</label>
+	</div>
+	<textarea formControlName="comment" placeholder="Комментарий"></textarea>
+	<button type="submit" [disabled]="!documentForm.get('resolution').value" (click)="setState(1)">Утвердить</button>
+	<button type="submit" [disabled]="!documentForm.get('resolution').value" (click)="setState(0)">Отклонить</button>
+</form>
+</ng-container>

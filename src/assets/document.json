@@ -1,0 +1,15 @@
+[
+	{
+		"name": "DEVELOP ACROSS ALL PLATFORMS",
+		"desc": [
+			"Learn one way to build applications with Angular and reuse your code and abilities to build apps for any deployment target. For web, mobile web, native mobile and native desktop.",
+			"Achieve the maximum speed possible on the Web Platform today, and take it further, via Web Workers and server-side rendering. Angular puts you in control over scalability. Meet huge data requirements by building data models on RxJS, Immutable.js or another push-model."
+		]
+	},
+	{
+		"name": "SPEED & PERFORMANCE",
+		"desc": [
+			"Achieve the maximum speed possible on the Web Platform today, and take it further, via Web Workers and server-side rendering. Angular puts you in control over scalability. Meet huge data requirements by building data models on RxJS, Immutable.js or another push-model."
+		]
+	}
+]
